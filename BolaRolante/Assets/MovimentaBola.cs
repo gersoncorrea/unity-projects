@@ -11,9 +11,12 @@ public class MovimentaBola : MonoBehaviour {
 		rb = GetComponent<Rigidbody>();
 	}
 	
-	// Update is called once per frame
+	// Called before Update
 	void Update () {
+		// get keyboard event
 		Vector3 move = new Vector3 (Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"));
+
+		// add speed
 		rb.AddForce (move*velocidade);
 	}
 }
